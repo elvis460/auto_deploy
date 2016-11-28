@@ -3,7 +3,6 @@ lock '3.5.0'
 
 set :use_sudo, true
 set :application, 'auto_deploy'
-set :tmp_dir, "~/tmp"
 set :repo_url, 'git@github.com:elvis460/auto_deploy.git'
 
 # Default branch is :master
