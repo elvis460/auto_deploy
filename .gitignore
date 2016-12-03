@@ -21,4 +21,5 @@
 .byebug_history
 
 /config/deploy
+/config/deploy.rb
 /config/database.yml
