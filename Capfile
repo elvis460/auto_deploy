@@ -24,6 +24,9 @@ require "capistrano/deploy"
 # require 'capistrano/passenger'
 before 'deploy', 'slack:deploy_start'
 after 'deploy', 'slack:deploy_complete'
+after 'deploy', 'deploy:restart'
+before 'deploy:rollback', 'slack:failed'
+after 'deploy:rollback', 'slack:rolled_back'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
